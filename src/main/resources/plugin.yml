@@ -1,0 +1,12 @@
+# Tinnu, crépuscule en sindarin.
+name: Tinnu
+version: '${version}'
+main: dev.siwa.tinnu.Tinnu
+api-version: '1.20'
+authors: [Siwa]
+description: Tinnu allows the synchronization of day and night between a Minecraft world and real life
+
+commands:
+  tinnu:
+    description: Permet de gérer le cycle jour/nuit
+    permission: tinnu.use
