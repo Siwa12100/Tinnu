@@ -1,2 +1,4 @@
 # Tinnu
-Tinnu, synchronisation du temps entre Minecraft et la vraie vie 
+
+Plugin de synchronisation du rythme du soleil entre le jeu et la vie réelle.
+Le plugin est toujours en développement.
