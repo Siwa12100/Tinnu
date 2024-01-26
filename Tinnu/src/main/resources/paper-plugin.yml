@@ -1,0 +1,4 @@
+name: Tinnu
+version: '${version}'
+main: dev.siwa.tinnu.tinnu.Tinnu
+api-version: '1.20'
