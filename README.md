@@ -2,23 +2,22 @@
 
 Tinnu est un plugin permettant de synchroniser le cycle jour/nuit de mondes Minecraft avec la vraie vie. Le soleil et la lune ont donc la même position dans le jeu et la vraie vie.
 
-Dans ce sens, il fait jour et nuit de la même manière entre les mondes synchronisés en jeu et le monde réel.
 
 ### Options paramétrables
 
-Voici la liste des choses qu'il est possible de modifier, par le biais du fichier `config.yml` du plugin :
+Voici la liste des choses qu'il est possible de modifier par le biais du fichier `config.yml` du plugin :
 
 * Le fait que Tinnu soit actif ou non.
 
 * La liste des mondes au sein desquels le cycle jour/nuit est synchronisé.
 
-* L'heure du levé du soleil dans la vraie vie.
+* L'heure du lever du soleil dans la vraie vie.
 
 * L'heure du coucher du soleil dans la vraie vie.
 
-* La position qu'a le soleil quand il se lève.
+* La position du soleil quand il se lève.
 
-* La position qu'a le soleil quand il se couche.
+* La position du soleil quand il se couche.
 
 ### Informations importantes
 
@@ -33,7 +32,7 @@ Attention, si vous essayez de modifier le fichier de config alors que la machine
 
 ### Contexte & appartenance
 
-Tinnu a été réalisé dans le cadre du Lab de l'Alliance d'Elendil, point de ralliement de la communauté francophone de survie vanilla Minecraft, pour pourvoir rajouter de l'immersion au sein de l'Agora d'Elendil.
+Tinnu a été réalisé dans le cadre du Lab de l'Alliance d'Elendil, point de ralliement de la communauté francophone de survie vanilla Minecraft, dans l'optique d'apporter de l'immersion au sein de l'Agora d'Elendil.
 
 Dans ce sens, si vous souhaitez faire des retours ou bien échanger avec nous, n'hésitez pas à passer dire bonjour sur le [discord de l'Elendil Lab](https://discord.gg/B2NWNd2VUf).
 
