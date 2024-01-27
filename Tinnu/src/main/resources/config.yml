@@ -1,4 +1,6 @@
-# Configuration du plugin Minecraft Paper
+# ======================
+# Configuration de Tinnu
+# ======================
 
 # Activation ou désactivation du plugin
 plugin-actif: false
@@ -19,13 +21,7 @@ heure-coucher-soleil: "18:00"
 mondes-supportes:
   - world
 
+# Nombre de fois où l'heure est modifié dans un cycle de jour ou de nuit
 nb-repostionnements: 20
 
-# Valeurs par défaut
-# plugin-actif: true
-# position-soleil-jour: 0
-# position-soleil-nuit: 180
-# heure-lever-soleil: 06:00
-# heure-coucher-soleil: 18:00
-# mondes-supportes:
-#   - default
+

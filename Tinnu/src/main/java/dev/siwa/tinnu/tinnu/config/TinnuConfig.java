@@ -2,12 +2,13 @@ package dev.siwa.tinnu.tinnu.config;
 
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
+import static org.bukkit.Bukkit.getServer;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalTime;
 
-import static org.bukkit.Bukkit.getServer;
+
 
 public class TinnuConfig {
 
@@ -48,25 +49,9 @@ public class TinnuConfig {
         }
     }
 
-//    public static String afficherConfig() {
-//
-//        StringBuilder infos = new StringBuilder();
-//        infos.append("----- Configuration Tinnu -----\n");
-//        infos.append("Tinnu Actif : ").append(tinnuActif).append("\n");
-//        infos.append("Heure de lever du soleil : ").append(heureLeveSoleil).append("\n");
-//        infos.append("Heure de coucher du soleil : ").append(heureCoucheSoleil).append("\n");
-//        infos.append("Position du soleil au début du jour : ").append(positionSoleilDebutJour).append("\n");
-//        infos.append("Position du soleil au début de la nuit : ").append(positionSoleilDebutNuit).append("\n");
-//
-//        if (isConfigChargee()) {
-//            return infos.toString();
-//        } else {
-//            return ("Config de Tinnu non chargée ! ");
-//        }
-//    }
-
     public static String afficherConfig() {
         StringBuilder infos = new StringBuilder();
+
         infos.append("----- Configuration Tinnu -----\n");
         infos.append("Tinnu Actif : ").append(tinnuActif).append("\n");
         infos.append("Heure de lever du soleil : ").append(heureLeveSoleil).append("\n");
@@ -80,7 +65,7 @@ public class TinnuConfig {
             for (World monde : mondesAffectes) {
                 infos.append(monde.getName()).append(", ");
             }
-            infos.delete(infos.length() - 2, infos.length()); // Supprime la virgule et l'espace après le dernier monde
+            infos.delete(infos.length() - 2, infos.length());
         } else {
             infos.append("Aucun monde spécifié");
         }
@@ -122,6 +107,6 @@ public class TinnuConfig {
     }
 
     public static int getPositionDebutNuit() {
-        return positionSoleilDebutNuit;    }
-
+        return positionSoleilDebutNuit;
+    }
 }
