@@ -13,12 +13,12 @@ public class Afficheur {
     }
 
     public static void afficherInfo(String msg) {
-        System.out.println("\n[Tinnu] : " + msg + "\n");
+        System.out.println("[Info] : " + msg + "\n");
     }
 
     public static void afficherDebug(String msg) {
         if (Afficheur.modeDebugActif) {
-            System.out.println("\n[Tinnu debug] : " + msg + "\n");
+            System.out.println("[debug] : " + msg + "\n");
         }
     }
 }

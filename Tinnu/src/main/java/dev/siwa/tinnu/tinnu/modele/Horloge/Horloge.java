@@ -1,25 +1,26 @@
 package dev.siwa.tinnu.tinnu.modele.Horloge;
 
+import jdk.jshell.execution.LoaderDelegate;
+
 import java.time.LocalTime;
 
-public class HorlogeFactice implements IHorloge {
+public class Horloge implements IHorloge {
 
-    public HorlogeFactice() {
+    public Horloge() {
 
     }
-
     @Override
     public LocalTime getHeureCourante() {
-        return LocalTime.of(20, 0, 00);
+        return LocalTime.now();
     }
 
     @Override
     public LocalTime getHeureLeveSoleil() {
-        return LocalTime.of(19, 59, 00);
+        return LocalTime.of(01, 49);
     }
 
     @Override
     public LocalTime getHeureCoucheSoleil() {
-        return LocalTime.of(20, 2, 00);
+        return LocalTime.of(01, 51);
     }
 }
