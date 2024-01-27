@@ -1,6 +1,6 @@
 # Tinnu
 
-Tinnu est un plugin permettant de synchroniser le cycle jour/nuit de mondes Minecraft avec la vraie vie. Le soleil et la lune ont donc la même position dans le jeu et la vraie vie.
+Tinnu est un plugin permettant de synchroniser le cycle jour/nuit de mondes Minecraft avec la vraie vie. Le soleil et la lune ont donc la même position dans le jeu et le monde réel.
 
 
 ### Options paramétrables
