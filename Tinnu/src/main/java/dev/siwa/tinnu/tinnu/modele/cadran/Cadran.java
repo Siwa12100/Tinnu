@@ -2,6 +2,7 @@ package dev.siwa.tinnu.tinnu.modele.cadran;
 
 import dev.siwa.tinnu.tinnu.Tinnu;
 import dev.siwa.tinnu.tinnu.affichage.Afficheur;
+import dev.siwa.tinnu.tinnu.config.TinnuConfig;
 import dev.siwa.tinnu.tinnu.modele.Horloge.IHorloge;
 import org.bukkit.World;
 import org.bukkit.scheduler.BukkitScheduler;
@@ -27,15 +28,15 @@ public class Cadran implements ICadran {
     private int nbChangementPositionAstreDansCycle;
 
     public Cadran(IHorloge horloge) {
-        this.lesMondes = new ArrayList<>();
+        this.lesMondes = TinnuConfig.getMondesAffectes();
 
         this.horloge = horloge;
         this.debutJour = horloge.getHeureLeveSoleil();
         this.debutNuit = horloge.getHeureCoucheSoleil();
 
-        this.positionLuneDebutNuit = 13200;
-        this.positionSoleilDebutJour = 22570;
-        this.nbChangementPositionAstreDansCycle = 300;
+        this.positionLuneDebutNuit = TinnuConfig.getPositionDebutNuit();
+        this.positionSoleilDebutJour = TinnuConfig.getPositionSoleilDebutJour();
+        this.nbChangementPositionAstreDansCycle = TinnuConfig.getNbRepositionnements();
     }
 
     private int calculDistanceEntreDeuxPositions(int pos1, int pos2) {
@@ -160,8 +161,6 @@ public class Cadran implements ICadran {
 
         Afficheur.afficherDebug("Debut d'un cyle de nuit");
 
-
-
         int distanceAParcourir = distanceAParcourirLune();
         int dureeDeLaNuit = calculDureeNuit();
         final int dureeEntreChangements = calculTempsEntreMouvementAstre(dureeDeLaNuit, this.nbChangementPositionAstreDansCycle);
@@ -175,9 +174,9 @@ public class Cadran implements ICadran {
             Afficheur.afficherDebug("Il va falloir commencer à rattraper " + tempsARattraper + " secondes !");
 
             int nbFoisARepositionner = tempsARattraper / dureeEntreChangements;
-            distanceARattraper = nbFoisARepositionner * distanceEntreChangements;
         }
 
+        distanceARattraper = calculProportion(dureeDeLaNuit, tempsARattraper, distanceAParcourir);
         this.positionnerAstreAuBonEndroit(this.positionLuneDebutNuit + distanceARattraper);
 
         Afficheur.afficherDebug("pos world sol : " + getServer().getWorld("world").getTime());
@@ -274,11 +273,12 @@ public class Cadran implements ICadran {
             Afficheur.afficherDebug("Il va falloir commencer à rattraper " + tempsARattraper + " secondes !");
 
             int nbFoisARepositionner = tempsARattraper / dureeEntreChangements;
-            distanceARattraper = nbFoisARepositionner * distanceEntreChangements;
+
 
             Afficheur.afficherDebug("La distance a rattraper est de " + distanceARattraper + "(tot : "+ distanceAParcourir + ").");
         }
 
+        distanceARattraper = calculProportion(dureeDuJour, tempsARattraper, distanceAParcourir);
         this.positionnerAstreAuBonEndroit(this.positionSoleilDebutJour + distanceARattraper);
 
         Afficheur.afficherDebug("pos world sol : " + getServer().getWorld("world").getTime());
@@ -296,6 +296,13 @@ public class Cadran implements ICadran {
         scheduler.runTask(Tinnu.getInstance(), () -> {
             this.faireAvancerSoleil(scheduler, dureeEntreChangements, distanceEntreChangements);
         });
+    }
+
+    private int calculProportion(int dureeTotale, int tempsARattraper, int distanceTotale) {
+        double proportion = (double) tempsARattraper / dureeTotale;
+        Afficheur.afficherDebug("La proportion est de : "  + proportion);
+        int resultat = (int) (distanceTotale * proportion);
+        return resultat;
     }
 
     private void faireAvancerSoleil(BukkitScheduler scheduler, int dureeEntreChangements, int distanceEntreChangements) {

@@ -1,0 +1,31 @@
+# Configuration du plugin Minecraft Paper
+
+# Activation ou désactivation du plugin
+plugin-actif: false
+
+# Position du soleil au début du jour
+position-soleil-jour: 22570
+
+# Position du soleil au début de la nuit
+position-soleil-nuit: 13200
+
+# Heure de lever du soleil
+heure-lever-soleil: "06:00"
+
+# Heure de coucher du soleil
+heure-coucher-soleil: "18:00"
+
+# Liste des mondes pris en charge par le plugin
+mondes-supportes:
+  - world
+
+nb-repostionnements: 20
+
+# Valeurs par défaut
+# plugin-actif: true
+# position-soleil-jour: 0
+# position-soleil-nuit: 180
+# heure-lever-soleil: 06:00
+# heure-coucher-soleil: 18:00
+# mondes-supportes:
+#   - default

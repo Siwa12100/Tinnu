@@ -10,16 +10,16 @@ public class HorlogeFactice implements IHorloge {
 
     @Override
     public LocalTime getHeureCourante() {
-        return LocalTime.of(20, 0, 00);
+        return LocalTime.of(20, 20, 00);
     }
 
     @Override
     public LocalTime getHeureLeveSoleil() {
-        return LocalTime.of(19, 59, 00);
+        return LocalTime.of(20, 26, 00);
     }
 
     @Override
     public LocalTime getHeureCoucheSoleil() {
-        return LocalTime.of(20, 2, 00);
+        return LocalTime.of(20, 18, 00);
     }
 }

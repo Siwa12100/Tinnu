@@ -1,5 +1,6 @@
 package dev.siwa.tinnu.tinnu.modele.Horloge;
 
+import dev.siwa.tinnu.tinnu.config.TinnuConfig;
 import jdk.jshell.execution.LoaderDelegate;
 
 import java.time.LocalTime;
@@ -16,11 +17,11 @@ public class Horloge implements IHorloge {
 
     @Override
     public LocalTime getHeureLeveSoleil() {
-        return LocalTime.of(01, 49);
+        return TinnuConfig.getHeureLeveSoleil();
     }
 
     @Override
     public LocalTime getHeureCoucheSoleil() {
-        return LocalTime.of(01, 51);
+        return TinnuConfig.getHeureCoucheSoleil();
     }
 }
