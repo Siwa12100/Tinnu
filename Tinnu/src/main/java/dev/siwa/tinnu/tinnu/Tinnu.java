@@ -18,9 +18,8 @@ public final class Tinnu extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         //Afficheur.activerModeDebug();
-        Afficheur.afficherDebug("Lancement du OnEnable");
+
         Tinnu.instance = this;
         this.loadConfigFile();
         TinnuConfig.chargerConfig(this.config);
@@ -31,15 +30,11 @@ public final class Tinnu extends JavaPlugin {
             cadran.ajouterMonde(getServer().getWorld("world"));
             cadran.lancerSynchronisation();
         }
-
-        Afficheur.afficherDebug("Fin du OnEnable");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-
-        Afficheur.afficherDebug("Fin du onDisable");
     }
 
     public static Tinnu getInstance() {
